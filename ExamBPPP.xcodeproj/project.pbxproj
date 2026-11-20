@@ -13,6 +13,7 @@
 		A0010004 /* ExamContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0010004 /* ExamContainerView.swift */; };
 		A0010005 /* AndroidBridgeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0010005 /* AndroidBridgeHandler.swift */; };
 		A0010006 /* DeviceCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0010006 /* DeviceCheckManager.swift */; };
+		A0010008 /* exambppp_round.png in Resources */ = {isa = PBXBuildFile; fileRef = B0010008 /* exambppp_round.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B0010005 /* AndroidBridgeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidBridgeHandler.swift; sourceTree = "<group>"; };
 		B0010006 /* DeviceCheckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCheckManager.swift; sourceTree = "<group>"; };
 		B0010007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0010008 /* exambppp_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exambppp_round.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				B0010007 /* Info.plist */,
+				B0010008 /* exambppp_round.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0010008 /* exambppp_round.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

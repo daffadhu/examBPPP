@@ -16,47 +16,71 @@ final class AndroidBridgeHandler: NSObject, WKScriptMessageHandler {
     static var injectionScript: String {
         return """
         (function() {
-            if (window.AndroidBridge) return;
+            if (!window.AndroidBridge) {
+                window.AndroidBridge = {
+                    getAppVersion: function() {
+                        return "9.0.0";
+                    },
+                    isSecureEnvironment: function() {
+                        return true;
+                    },
+                    notifyExamStarted: function() {
+                        try {
+                            window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
+                                action: "notifyExamStarted"
+                            });
+                        } catch (e) {
+                            console.error("[ExamBPPP Bridge] notifyExamStarted error:", e);
+                        }
+                    },
+                    notifyExamFinished: function() {
+                        try {
+                            window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
+                                action: "notifyExamFinished"
+                            });
+                        } catch (e) {
+                            console.error("[ExamBPPP Bridge] notifyExamFinished error:", e);
+                        }
+                    },
+                    notifyRouteChanged: function(route) {
+                        try {
+                            window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
+                                action: "notifyRouteChanged",
+                                route: String(route)
+                            });
+                        } catch (e) {
+                            console.error("[ExamBPPP Bridge] notifyRouteChanged error:", e);
+                        }
+                    },
+                    requestNativeExit: function() {
+                        try {
+                            window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
+                                action: "requestNativeExit"
+                            });
+                        } catch (e) {
+                            console.error("[ExamBPPP Bridge] requestNativeExit error:", e);
+                        }
+                    },
+                    logNativeEvent: function(tag, event, data) {
+                        try {
+                            window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
+                                action: "logNativeEvent",
+                                tag: String(tag),
+                                event: String(event),
+                                data: String(data)
+                            });
+                        } catch (e) {
+                            console.error("[ExamBPPP Bridge] logNativeEvent error:", e);
+                        }
+                    }
+                };
+            }
             
-            window.AndroidBridge = {
-                getAppVersion: function() {
-                    return "9.0.0";
-                },
-                isSecureEnvironment: function() {
-                    return true;
-                },
-                notifyExamStarted: function() {
-                    window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
-                        action: "notifyExamStarted"
-                    });
-                },
-                notifyExamFinished: function() {
-                    window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
-                        action: "notifyExamFinished"
-                    });
-                },
-                notifyRouteChanged: function(route) {
-                    window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
-                        action: "notifyRouteChanged",
-                        route: route
-                    });
-                },
-                requestNativeExit: function() {
-                    window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
-                        action: "requestNativeExit"
-                    });
-                },
-                logNativeEvent: function(tag, event, data) {
-                    window.webkit.messageHandlers.\(scriptHandlerName).postMessage({
-                        action: "logNativeEvent",
-                        tag: tag,
-                        event: event,
-                        data: data
-                    });
-                }
-            };
+            if (!window.ExamCallback) {
+                window.ExamCallback = {};
+            }
             
-            console.log("[ExamBPPP iOS] AndroidBridge shim successfully injected.");
+            console.log("[ExamBPPP iOS] AndroidBridge shim successfully initialized.");
         })();
         """
     }
