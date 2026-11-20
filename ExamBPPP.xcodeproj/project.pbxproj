@@ -14,6 +14,11 @@
 		A0010005 /* AndroidBridgeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0010005 /* AndroidBridgeHandler.swift */; };
 		A0010006 /* DeviceCheckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0010006 /* DeviceCheckManager.swift */; };
 		A0010008 /* exambppp_round.png in Resources */ = {isa = PBXBuildFile; fileRef = B0010008 /* exambppp_round.png */; };
+		A0010009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0010009 /* Assets.xcassets */; };
+		A001000A /* AppIcon-1024.png in Resources */ = {isa = PBXBuildFile; fileRef = B001000A /* AppIcon-1024.png */; };
+		A001000B /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B001000B /* AppIcon60x60@2x.png */; };
+		A001000C /* AppIcon60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = B001000C /* AppIcon60x60@3x.png */; };
+		A001000D /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B001000D /* AppIcon76x76@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		B0010006 /* DeviceCheckManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCheckManager.swift; sourceTree = "<group>"; };
 		B0010007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0010008 /* exambppp_round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exambppp_round.png; sourceTree = "<group>"; };
+		B0010009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B001000A /* AppIcon-1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon-1024.png"; sourceTree = "<group>"; };
+		B001000B /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		B001000C /* AppIcon60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@3x.png"; sourceTree = "<group>"; };
+		B001000D /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,11 @@
 			children = (
 				B0010007 /* Info.plist */,
 				B0010008 /* exambppp_round.png */,
+				B0010009 /* Assets.xcassets */,
+				B001000A /* AppIcon-1024.png */,
+				B001000B /* AppIcon60x60@2x.png */,
+				B001000C /* AppIcon60x60@3x.png */,
+				B001000D /* AppIcon76x76@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -160,6 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0010008 /* exambppp_round.png in Resources */,
+				A0010009 /* Assets.xcassets in Resources */,
+				A001000A /* AppIcon-1024.png in Resources */,
+				A001000B /* AppIcon60x60@2x.png in Resources */,
+				A001000C /* AppIcon60x60@3x.png in Resources */,
+				A001000D /* AppIcon76x76@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

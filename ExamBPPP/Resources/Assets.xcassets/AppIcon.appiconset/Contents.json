@@ -1,0 +1,32 @@
+{
+    "images":  [
+                   {
+                       "size":  "1024x1024",
+                       "platform":  "ios",
+                       "filename":  "AppIcon-1024.png",
+                       "idiom":  "universal"
+                   },
+                   {
+                       "size":  "60x60",
+                       "scale":  "2x",
+                       "filename":  "AppIcon60x60@2x.png",
+                       "idiom":  "iphone"
+                   },
+                   {
+                       "size":  "60x60",
+                       "scale":  "3x",
+                       "filename":  "AppIcon60x60@3x.png",
+                       "idiom":  "iphone"
+                   },
+                   {
+                       "size":  "76x76",
+                       "scale":  "2x",
+                       "filename":  "AppIcon76x76@2x.png",
+                       "idiom":  "ipad"
+                   }
+               ],
+    "info":  {
+                 "author":  "xcode",
+                 "version":  1
+             }
+}

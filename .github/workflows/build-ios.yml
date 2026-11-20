@@ -5,6 +5,9 @@ on:
     branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     name: Build & Package IPA
@@ -45,3 +48,15 @@ jobs:
           name: ExamBPPP-iOS-IPA
           path: ExamBPPP.ipa
           retention-days: 14
+
+      - name: Create or Update GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          tag_name: latest
+          name: "ExamBPPP iOS (Latest Build)"
+          files: ExamBPPP.ipa
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
