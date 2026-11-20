@@ -17,7 +17,7 @@ struct ExamContainerView: View {
     
     var body: some View {
         ZStack {
-            Color.black.ignoresSafeArea()
+            Color.white.ignoresSafeArea()
             
             ExamWebViewRepresentable(
                 url: targetURL,
@@ -100,7 +100,7 @@ struct ExamContainerView: View {
                 .ignoresSafeArea()
             }
         }
-        .statusBar(hidden: true)
+        .statusBarHidden(true)
         .onAppear {
             bridgeDelegateHolder.onRequestNativeExitCallback = {
                 showExitAlert = true
