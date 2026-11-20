@@ -42,16 +42,16 @@ struct ExamContainerView: View {
         .navigationBarHidden(true)
         .statusBar(hidden: true)
         .onAppear {
-            bridgeDelegateHolder.onExitRequested = {
+            bridgeDelegateHolder.onRequestNativeExitCallback = {
                 showExitAlert = true
             }
-            bridgeDelegateHolder.onExamStarted = {
+            bridgeDelegateHolder.onExamStartedCallback = {
                 isExamActive = true
             }
-            bridgeDelegateHolder.onExamFinished = {
+            bridgeDelegateHolder.onExamFinishedCallback = {
                 isExamActive = false
             }
-            bridgeDelegateHolder.onRouteChanged = { route in
+            bridgeDelegateHolder.onRouteChangedCallback = { route in
                 currentRoute = route
             }
         }
@@ -71,29 +71,28 @@ struct ExamContainerView: View {
 final class BridgeDelegateHolder: ObservableObject, ExamBridgeDelegate {
     let handler = AndroidBridgeHandler()
     
-    var onExamStarted: (() -> Void)?
-    var onExamFinished: (() -> Void)?
-    var onRouteChanged: ((String) -> Void)?
-    var onRequestNativeExit: (() -> Void)?
-    var onExitRequested: (() -> Void)?
+    var onExamStartedCallback: (() -> Void)?
+    var onExamFinishedCallback: (() -> Void)?
+    var onRouteChangedCallback: ((String) -> Void)?
+    var onRequestNativeExitCallback: (() -> Void)?
     
     init() {
         handler.delegate = self
     }
     
     func onExamStarted() {
-        onExamStarted?()
+        onExamStartedCallback?()
     }
     
     func onExamFinished() {
-        onExamFinished?()
+        onExamFinishedCallback?()
     }
     
     func onRouteChanged(route: String) {
-        onRouteChanged?(route)
+        onRouteChangedCallback?(route)
     }
     
     func onRequestNativeExit() {
-        onExitRequested?()
+        onRequestNativeExitCallback?()
     }
 }
